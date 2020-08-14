@@ -61,12 +61,16 @@
     <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Scripts/CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Scripts/CFX_LightIntensityFade.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Scripts/CFX_AutoRotate.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_New.cs" />
-    <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/Camera/CameraFollow.cs" />
+    <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyMovement.cs" />
+    <Compile Include="Assets/Scripts/Bullet/Bullet.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyShooting.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyAttack.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/JMO Assets/Cartoon FX/Shaders/CFX3 Multiply Color.shader" />
