@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Rigidbody rb;
     public float speed = 10;
+    public int damage = 10;
+
+    private Rigidbody rb;
+    private Damager damager;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        damager = GetComponent<Damager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -19,6 +24,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Health health = collision.gameObject.GetComponent<Health>();
+        if(health != null)
+        {
+            damager.DoDamage(health, damage);
+        }
         Destroy(gameObject); 
     }
 

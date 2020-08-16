@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class PlayerShooting : MonoBehaviour
     public float effectDisplay = 0.1f;
     public GameObject playerBullet;
     public Transform gunEnd;
+
+    public Rigidbody bombPrefab;
+    public Vector2 bombImpulse;
+    public Image bombImage;
+    public float bombCoolDown = 10f;
+    private float bombTimer;
 
     private float timer;
     private Light gunLight;
@@ -21,16 +28,31 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bombTimer = bombCoolDown;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
+
+        bombTimer += Time.deltaTime;
+        bombImage.fillAmount = bombTimer / bombCoolDown;
+
         if(timer > effectDisplay)
         {
             DisableEffects();
+        }
+    }
+
+    public void Bomb()
+    {
+        if(bombTimer >= bombCoolDown)
+        {
+            bombTimer = 0;
+            Rigidbody newBomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+            newBomb.AddForce(transform.forward * bombImpulse.x, ForceMode.Impulse);
+            newBomb.AddForce(Vector3.up * bombImpulse.y, ForceMode.Impulse);
         }
     }
 
