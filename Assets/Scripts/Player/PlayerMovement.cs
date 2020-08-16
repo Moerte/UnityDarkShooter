@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float speed = 6;
+
     private Rigidbody rb;
     private Vector3 movement;
-    public float speed = 6;
     private Animator animator;
+    private PlayerShooting playerShooting;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        playerShooting = GetComponentInChildren<PlayerShooting>();
     }
 
     private void FixedUpdate()
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if(rot != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(rot);
+            playerShooting.Shoot();
         }
     }
     void Animating(float h, float v)
