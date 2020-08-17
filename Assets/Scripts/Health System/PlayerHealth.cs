@@ -9,14 +9,18 @@ public class PlayerHealth : Health
     public Color damageColor;
     public float flashSpeed = 5;
 
+    public AudioClip damageSound, deathSound;
+
     private bool damaged;
     private Animator anim;
     private PlayerMovement playerMovement;
+    private AudioPlayer audioPlayer;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,7 @@ public class PlayerHealth : Health
         {
             return;
         }
+        audioPlayer.PlaySound(damageSound);
         damaged = true;
         currentHealth -= damage;
         healthSlider.value = currentHealth;
@@ -58,6 +63,7 @@ public class PlayerHealth : Health
     protected override void Death()
     {
         isDead = true;
+        audioPlayer.PlaySound(deathSound);
         anim.SetTrigger("Die");
         playerMovement.enabled = false;
         LevelController.instance.GameOver();

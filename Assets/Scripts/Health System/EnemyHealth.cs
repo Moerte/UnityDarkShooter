@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyHealth : Health
 {
+    public AudioClip deathSound, damageSound;
     public float sinkSpeed = 2.5f;
     private bool isSinking;
     private ParticleSystem hitParticles;
@@ -11,9 +12,11 @@ public class EnemyHealth : Health
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
     private NavMeshAgent navMeshAgent;
+    private AudioPlayer audioPlayer;
 
     private void Awake()
     {
+        audioPlayer = GetComponent<AudioPlayer>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -40,7 +43,7 @@ public class EnemyHealth : Health
     {
         if (isDead)
             return;
-
+        audioPlayer.PlaySound(damageSound);
         currentHealth -= damage;
         hitParticles.transform.position = hitPoint;
         hitParticles.Play();
@@ -54,6 +57,7 @@ public class EnemyHealth : Health
     protected override void Death()
     {
         isDead = true;
+        audioPlayer.PlaySound(deathSound);
         capsuleCollider.isTrigger = true;
         anim.SetTrigger("Death");
         

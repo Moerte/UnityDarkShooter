@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public AudioClip shootSound;
+
     public float fireRate = 0.5f;
     public float effectDisplay = 0.1f;
     public GameObject playerBullet;
@@ -19,11 +21,13 @@ public class PlayerShooting : MonoBehaviour
     private float timer;
     private Light gunLight;
     private ParticleSystem gunEffect;
+    private AudioPlayer audioPlayer;
 
     private void Awake()
     {
         gunLight = GetComponent<Light>();
         gunEffect = GetComponent<ParticleSystem>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
     // Start is called before the first frame update
     void Start()
@@ -65,6 +69,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if(timer > fireRate)
         {
+            audioPlayer.PlaySound(shootSound);
             timer = 0;
             GameObject newBullet = Instantiate(playerBullet, gunEnd.position, gunEnd.rotation);
 
