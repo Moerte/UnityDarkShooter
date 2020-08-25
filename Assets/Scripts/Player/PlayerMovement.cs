@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,10 +22,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        float h, v;
+        if (!Application.isEditor)
+        {
+            h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+            v = CrossPlatformInputManager.GetAxisRaw("Vertical");
+
+        }
+        else
+        {
+            h = Input.GetAxisRaw("Horizontal");
+            v = Input.GetAxisRaw("Vertical");
+
+        }
+
+        float rotH = CrossPlatformInputManager.GetAxisRaw("RotHorizontal");
+        float rotV = CrossPlatformInputManager.GetAxisRaw("RotVertical");
+
         Move(h, v);
-        Turning(h, v);
+        Turning(rotH, rotV);
         Animating(h, v);
     }
     // Update is called once per frame

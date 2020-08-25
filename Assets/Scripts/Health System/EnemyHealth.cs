@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyHealth : Health
 {
     public AudioClip deathSound, damageSound;
+    public int scoreValue = 10;
     public float sinkSpeed = 2.5f;
     private bool isSinking;
     private ParticleSystem hitParticles;
@@ -60,6 +61,7 @@ public class EnemyHealth : Health
         audioPlayer.PlaySound(deathSound);
         capsuleCollider.isTrigger = true;
         anim.SetTrigger("Death");
+        LevelController.instance.UpdateScore(scoreValue);
         
     }
 

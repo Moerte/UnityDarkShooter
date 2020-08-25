@@ -1,18 +1,43 @@
 ﻿<Properties StartupConfiguration="{A6D86139-ACE3-DF9D-51B6-9F772A65E56B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Health System/PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/EnemySpawner.cs">
     <Files>
-      <File FileName="Assets/Scripts/Health System/EnemyHealth.cs" Line="58" Column="31" />
+      <File FileName="Assets/Scripts/Health System/EnemyHealth.cs" Line="64" Column="58" />
       <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" />
       <File FileName="Assets/Scripts/Player/Bomb.cs" />
-      <File FileName="Assets/Scripts/Player/PlayerShooting.cs" />
-      <File FileName="Assets/Scripts/Health System/Damager.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/Audio/AudioPlayer.cs" Line="17" Column="29" />
+      <File FileName="Assets/Scripts/Player/PlayerShooting.cs" Line="46" Column="55" />
+      <File FileName="Assets/Scripts/Health System/Damager.cs" />
+      <File FileName="Assets/Scripts/Audio/AudioPlayer.cs" />
       <File FileName="Assets/Scripts/Health System/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="35" Column="13" />
+      <File FileName="Assets/Scripts/Manager/LevelController.cs" Line="25" Column="17" />
+      <File FileName="Assets/Scripts/Manager/EnemySpawner.cs" Line="8" Column="15" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Dark Shooter" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Manager" expanded="True">
+                  <Node name="EnemySpawner.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Dark Shooter" expanded="True">
+            <Node name="Assembly-CSharp-Editor" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9b21e8d4-ce3b-457c-9497-abb4cd8c542e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c84d4944-4263-4a59-bd4e-4cf24cc24c38" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

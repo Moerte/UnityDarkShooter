@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class PlayerShooting : MonoBehaviour
 
         bombTimer += Time.deltaTime;
         bombImage.fillAmount = bombTimer / bombCoolDown;
+        if (CrossPlatformInputManager.GetButtonDown("Bomb"))
+        {
+            Bomb();
+        }
 
         if(timer > effectDisplay)
         {
