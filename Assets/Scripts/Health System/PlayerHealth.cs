@@ -10,11 +10,13 @@ public class PlayerHealth : Health
     public float flashSpeed = 5;
 
     public AudioClip damageSound, deathSound;
+    public GameObject adButton;
 
     private bool damaged;
     private Animator anim;
     private PlayerMovement playerMovement;
     private AudioPlayer audioPlayer;
+    private bool alreadyDied;
 
     private void Awake()
     {
@@ -67,10 +69,36 @@ public class PlayerHealth : Health
         anim.SetTrigger("Die");
         playerMovement.enabled = false;
         LevelController.instance.GameOver();
+
+        if (!alreadyDied)
+        {
+            adButton.SetActive(true);
+            //alreadyDied = true;
+        }
     }
 
     protected override void Spawn()
     {
         currentHealth = startingHealth;
+    }
+
+    public void Respawn()
+    {
+        currentHealth = startingHealth;
+        anim.Rebind();
+        healthSlider.value = currentHealth;
+        playerMovement.enabled = true;
+        Invoke("SetIsDead", 2.0f);
+
+        EnemyMovement[] enemies = FindObjectsOfType<EnemyMovement>();
+        for(int i = 0; i< enemies.Length; i++)
+        {
+            enemies[i].Restart();
+        }
+    }
+
+    void SetIsDead()
+    {
+        isDead = false;
     }
 }

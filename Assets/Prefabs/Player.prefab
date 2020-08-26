@@ -5070,9 +5070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSound: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
-  fireRate: 0.5
   effectDisplay: 0.1
-  playerBullet: {fileID: 7093382385843224104, guid: 2d0dc1b0faf8c4f2f9043247ad450624, type: 3}
+  playerBullet: {fileID: 7093382385843224110, guid: 2d0dc1b0faf8c4f2f9043247ad450624, type: 3}
   gunEnd: {fileID: 3851201955503200397}
   bombPrefab: {fileID: 4687978469461084359, guid: 93270cf2bae984cd98c8193a5c6339c7, type: 3}
   bombImpulse: {x: 5, y: 5}
@@ -5309,6 +5308,7 @@ MonoBehaviour:
   flashSpeed: 5
   damageSound: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
   deathSound: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
+  adButton: {fileID: 0}
 --- !u!82 &345410461
 AudioSource:
   m_ObjectHideFlags: 0

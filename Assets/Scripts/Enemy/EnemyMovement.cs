@@ -9,11 +9,13 @@ public class EnemyMovement : MonoBehaviour
     private Transform player;
     private EnemyHealth enemyHealth;
     private PlayerHealth playerHealth;
+    private Animator anim;
 
     private void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
         enemyHealth = GetComponent<EnemyHealth>();
+        anim = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -26,8 +28,18 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
             nav.SetDestination(player.position);
+        else
+        {
+            anim.SetBool("PlayerDeath", true);
+            nav.enabled = false;
+        }
+    }
 
+    public void Restart()
+    {
+        nav.enabled = true;
+        anim.SetBool("PlayerDeath", false);
     }
 }

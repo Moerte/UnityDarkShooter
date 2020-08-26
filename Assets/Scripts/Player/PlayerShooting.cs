@@ -8,9 +8,8 @@ public class PlayerShooting : MonoBehaviour
 {
     public AudioClip shootSound;
 
-    public float fireRate = 0.5f;
     public float effectDisplay = 0.1f;
-    public GameObject playerBullet;
+    public Bullet playerBullet;
     public Transform gunEnd;
 
     public Rigidbody bombPrefab;
@@ -24,6 +23,8 @@ public class PlayerShooting : MonoBehaviour
     private ParticleSystem gunEffect;
     private AudioPlayer audioPlayer;
 
+    private Level level;
+
     private void Awake()
     {
         gunLight = GetComponent<Light>();
@@ -34,6 +35,7 @@ public class PlayerShooting : MonoBehaviour
     void Start()
     {
         bombTimer = bombCoolDown;
+        level = GameManager.instance.levels[GameManager.instance.level];
     }
 
     // Update is called once per frame
@@ -72,12 +74,13 @@ public class PlayerShooting : MonoBehaviour
 
     public void Shoot()
     {
-        if(timer > fireRate)
+        if(timer > level.fireRate)
         {
             audioPlayer.PlaySound(shootSound);
             timer = 0;
-            GameObject newBullet = Instantiate(playerBullet, gunEnd.position, gunEnd.rotation);
-
+            Bullet newBullet = Instantiate(playerBullet, gunEnd.position, gunEnd.rotation);
+            newBullet.damage = level.damage;
+            newBullet.speed = level.bulletSpeed;
             gunLight.enabled = true;
             gunEffect.Stop();
             gunEffect.Play();

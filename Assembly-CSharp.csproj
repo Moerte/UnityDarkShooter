@@ -77,9 +77,15 @@
     <Compile Include="Assets/Scripts/Manager/LevelController.cs" />
     <Compile Include="Assets/Scripts/Camera/CameraFollow.cs" />
     <Compile Include="Assets/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets/Scripts/Manager/EnemySpawner.cs" />
     <Compile Include="Assets/Scripts/Health System/EnemyHealth.cs" />
     <Compile Include="Assets/Scripts/Player/Bomb.cs" />
-    <Compile Include="Assets/Scripts/Manager/EnemySpawner.cs" />
+    <Compile Include="Assets/Scripts/Manager/Menu.cs" />
+    <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/PlayServicesManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/AdManager.cs" />
+    <Compile Include="Assets/Scripts/Level/Level.cs" />
+    <Compile Include="Assets/Scripts/Level/LevelButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/JMO Assets/Cartoon FX/Shaders/CFX3 Multiply Color.shader" />
