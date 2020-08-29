@@ -6,5 +6,5 @@ using UnityEngine;
 public class Level
 {
     public int damage;
-    public float bulletSpeed, fireRate;
+    public float bulletSpeed, fireRate, playerSpeed, bombCoolDownLevel;
 }

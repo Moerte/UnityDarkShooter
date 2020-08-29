@@ -1,22 +1,38 @@
 ﻿<Properties StartupConfiguration="{A6D86139-ACE3-DF9D-51B6-9F772A65E56B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Level/LevelButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerShooting.cs">
     <Files>
-      <File FileName="Assets/Scripts/Health System/EnemyHealth.cs" Line="64" Column="58" />
-      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="43" Column="44" />
-      <File FileName="Assets/Scripts/Health System/PlayerHealth.cs" Line="76" Column="15" />
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Manager/LevelController.cs" Line="40" Column="40" />
-      <File FileName="Assets/Scripts/Manager/EnemySpawner.cs" />
-      <File FileName="Assets/Scripts/Manager/Menu.cs" Line="14" Column="29" />
-      <File FileName="Assets/Scripts/Manager/GameManager.cs" Line="27" Column="45" />
-      <File FileName="Assets/Scripts/Level/Level.cs" Line="6" Column="19" />
-      <File FileName="Assets/Scripts/Player/PlayerShooting.cs" Line="83" Column="49" />
-      <File FileName="Assets/Scripts/Level/LevelButton.cs" Line="22" Column="41" />
+      <File FileName="Assets/Scripts/Level/LevelButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Manager/LevelController.cs" Line="19" Column="29" />
+      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="25" Column="9" />
+      <File FileName="Assets/Scripts/Player/PlayerShooting.cs" Line="37" Column="73" />
+      <File FileName="Assets/Scripts/Manager/GameManager.cs" Line="22" Column="33" />
+      <File FileName="Assets/Scripts/Level/Level.cs" Line="9" Column="71" />
+      <File FileName="Assets/Scripts/Player/Bomb.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Dark Shooter" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Bullet" expanded="True" />
+                <Node name="Enemy" expanded="True" />
+                <Node name="Health System" expanded="True" />
+                <Node name="Level" expanded="True" />
+                <Node name="Manager" expanded="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="PlayerShooting.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6d4b4c44-29b6-4226-bf00-abff16b0c311" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e21cfd46-52f0-420f-ae44-9a6ebc8f5f73" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

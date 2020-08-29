@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (LevelController.instance.getScore() >= 2000) this.spawnTime = 2;
         InvokeRepeating("Spawn", spawnTime, spawnTime);
         player = FindObjectOfType<PlayerHealth>();
     }

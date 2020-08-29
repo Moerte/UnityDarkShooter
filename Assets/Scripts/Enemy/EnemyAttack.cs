@@ -7,20 +7,20 @@ public class EnemyAttack : MonoBehaviour
 
     public float attackRate = 1;
     public int damage = 10;
+    public GameObject damageImpact;
 
     private GameObject player;
     private PlayerHealth playerHealth;
-    public GameObject damageImpact;
     private float timer;
 
     private bool playerInRange;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
         playerHealth = player.GetComponent<PlayerHealth>();
-
     }
 
     // Update is called once per frame
@@ -53,7 +53,8 @@ public class EnemyAttack : MonoBehaviour
     void Attack()
     {
         timer = 0;
-        playerHealth.TakeDamage(damage, Vector3.zero);
+        if (LevelController.instance.getScore() > 1000) this.damage = 20;
+        playerHealth.TakeDamage(this.damage, Vector3.zero);
     }
 
     public void StartAttack()

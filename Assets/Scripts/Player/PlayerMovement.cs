@@ -5,13 +5,14 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6;
+    public float speed;
 
     private Rigidbody rb;
     private Vector3 movement;
     private Animator animator;
     private PlayerShooting playerShooting;
 
+    private Level level;
 
     private void Awake()
     {
@@ -19,7 +20,11 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
     }
-
+    private void Start()
+    {
+        level = GameManager.instance.levels[GameManager.instance.level];
+        this.speed = (int)level.playerSpeed;
+    }
     private void FixedUpdate()
     {
         float h, v;

@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
     public Rigidbody bombPrefab;
     public Vector2 bombImpulse;
     public Image bombImage;
-    public float bombCoolDown = 10f;
+    private float bombCoolDown;
     private float bombTimer;
 
     private float timer;
@@ -34,8 +34,10 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bombTimer = bombCoolDown;
         level = GameManager.instance.levels[GameManager.instance.level];
+        bombCoolDown = level.bombCoolDownLevel;
+        bombTimer = bombCoolDown;
+        
     }
 
     // Update is called once per frame

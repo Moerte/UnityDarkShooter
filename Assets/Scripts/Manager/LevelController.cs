@@ -21,6 +21,10 @@ public class LevelController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public int getScore()
+    {
+        return this.score;
+    }
 
     public void GameOver()
     {
@@ -49,6 +53,11 @@ public class LevelController : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenuReloadScene()
+    {   
+        SceneManager.LoadScene(0);
     }
 
 }
